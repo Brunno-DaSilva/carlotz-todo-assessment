@@ -4,7 +4,7 @@ After I found some free time, I reviewed the application and started in order to
 
 - Todo items deleted all new entries
   - _Issue:_ After the insertion of the seeds data file, that is loaded in the application initial load, all news todos were being deleted at once.
-  - I reli
+  - I realized that the ID for the new entries was not being generated.
 - asa
 - as
 
