@@ -1,0 +1,114 @@
+/*=======================================
+==> TODO ITEM
+=========================================*/
+
+.carlotz-checkbox {
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 50%;
+  border: 0.02rem solid var(--dt-very-dark-grayish-blue-two);
+  margin: 0 1.4rem;
+}
+
+.carlotz-checkbox-checked {
+  background: var(--primary-linear-gradient);
+  border: 0.02rem solid var(--border-color);
+}
+
+.carlotz-checkbox-unchecked {
+  background: transparent;
+  transition: ease-in-out 0.2s;
+}
+.carlotz-checkbox-unchecked:hover {
+  cursor: pointer;
+}
+
+.todo-item-input {
+  background-color: transparent;
+  border: none;
+  width: 80%;
+  outline: none;
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+  color: var(--text-color);
+  transition: ease-in-out 0.2s;
+}
+
+.todo-item-input:hover {
+  cursor: pointer;
+}
+
+.todo-item-input::placeholder {
+  color: var(--dt-dark-grayish-blue);
+}
+
+.reset-border {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+.todo-item-btn-delete {
+  background-color: transparent;
+  color: hsl(233, 14%, 35%);
+  border: none;
+  font-size: 18px;
+  margin-right: 1rem;
+}
+
+/************************
+    =       Fade UP
+    *************************/
+@-webkit-keyframes fadeInUp {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    /*-webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);*/
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    opacity: 1;
+    /*visibility: visible;*/
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+
+.animated.delay-1s {
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+  animation-delay: 0.5s;
+}
+
+.fadeInUp {
+  -webkit-animation-name: fadeInUp;
+  animation-name: fadeInUp;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    visibility: hidden;
+    /*-webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);*/
+    -webkit-transform: translate3d(0, 40px, 0);
+    transform: translate3d(0, 40px, 0);
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}

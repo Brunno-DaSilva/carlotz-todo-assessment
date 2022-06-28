@@ -1,3 +1,15 @@
+# Overview of the todo-app
+
+After I found some free time, I reviewed the application and started in order to improve the its features, fix some bugs, and enhance some features.
+
+- Todo items deleted all new entries
+  - _Issue:_ After the insertion of the seeds data file, that is loaded in the application initial load, all news todos were being deleted at once.
+  - I reli
+- asa
+- as
+
+---
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,4 +80,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
 # carlotz-todo-assessment

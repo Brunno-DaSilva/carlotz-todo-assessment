@@ -1,0 +1,69 @@
+/*=======================================
+==> TODO LIST
+=========================================*/
+
+.item-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  min-height: 18.75rem;
+  background: var(--item-background-color);
+  border-radius: 0.25rem;
+  padding-top: 0.25rem;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.089), 0 3px 3px rgba(0, 0, 0, 0.087);
+  transition: ease-in-out 0.2s;
+}
+
+.item-list-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: var(--item-background-color);
+  height: 4rem;
+  border-bottom-left-radius: 0.3rem;
+  border-bottom-right-radius: 0.3rem;
+  padding: 0 1.5rem;
+  transition: ease-in-out 0.2s;
+}
+.item-list-footer span {
+  color: var(--dt-dark-grayish-blue);
+  font-size: 0.9rem;
+}
+
+.item-list-footer-button {
+  background-color: transparent;
+  border: none;
+  color: hsl(233, 14%, 35%);
+  font-family: "Josefin Sans", sans-serif;
+  transition: ease-in-out 0.2s;
+}
+.item-list-footer-button:hover {
+  cursor: pointer;
+  color: hsl(280, 87%, 65%);
+}
+.item-list-footer-coll-2 {
+  width: 30%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item-list-footer-links {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: transparent;
+  border: none;
+}
+.btn-color {
+  color: var(--dt-dark-grayish-blue);
+}
+
+.btn-color:hover {
+  cursor: pointer;
+  transition: ease-in-out 0.2s;
+}
+
+.isActiveLink {
+  color: var(--primary-bright-blue);
+}
