@@ -1,0 +1,17 @@
+:root {
+  --dt-very-dark-grayish-blue-one: hsl(233, 14%, 35%);
+}
+
+.home-footer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.home-footer h3 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--dt-very-dark-grayish-blue-one);
+}
