@@ -117,7 +117,9 @@ body {
 .header-icon button:hover {
   cursor: pointer;
 }
-
+#todo-item-container {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
 .todo-item-container {
   background-color: var(--item-background-color);
   min-height: 4.5rem;
