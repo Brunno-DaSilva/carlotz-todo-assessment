@@ -26,11 +26,6 @@ export default function TodoItem({
     if (e.key === "Enter") return onSubmit();
   };
 
-  const { id: __ID } = item;
-  let newID = __ID || Date.now();
-
-  console.log(__ID);
-
   return (
     <div
       id="todo-item-container"

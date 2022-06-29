@@ -9,6 +9,7 @@ import LightThemeImage from "../../assets/images/bg-desktop-light.jpg";
 import LightThemeImageMB from "../../assets/images/bg-mobile-light.jpg";
 import SunIconDT from "../../assets/images/icon-sun.svg";
 import MoonIconLT from "../../assets/images/icon-moon.svg";
+import DuplicateIcon from "../../assets/images/alert-triangle.svg";
 import TodoItem from "../TodoItem/TodoItem";
 import TodoItemList from "../TodoItemList/TodoItemList";
 import SEED_DATA from "../../data/data";
@@ -19,6 +20,7 @@ export default function Home() {
   const [isLightTheme, setIsLightTheme] = useState(false);
   const [todoItems, setTodoItems] = useState(SEED_DATA);
   const [item, setItem] = useState(itemInitialState);
+  const [isDuplicate, setIsDuplicate] = useState(false);
 
   let lastID = todoItems[todoItems.length - 1].id;
   const [generateID, setGenerateID] = useState(lastID);
@@ -35,20 +37,36 @@ export default function Home() {
       status: "active",
     };
     setItem(newItem);
-    console.log(`onItemChange--Item - ${JSON.stringify(newItem)}`);
+    // console.log(`onItemChange--Item - ${JSON.stringify(newItem)}`);
+  };
+
+  const handleIsDuplicate = () => {
+    setIsDuplicate(true);
   };
 
   const onSubmit = () => {
-    console.log("ID---", item.id);
-
+    let objItem = todoItems.find((data) => item.value === data.value);
+    //Prevent Blank Submission
     if (!item.value || /^\s*$/.test(item.value)) return;
 
-    if (item.value)
-      setItem({ id: item.id, value: item.value, status: "active" });
-    let newList = [...todoItems, item];
-    setTodoItems(newList);
-    setItem(itemInitialState);
+    // prevent duplication
+    if (objItem) {
+      handleIsDuplicate();
+      item.value = "";
+    } else {
+      //check item.value
+      if (item.value) {
+        setItem({ id: item.id, value: item.value, status: "active" });
+      }
+
+      let newList = [...todoItems, item];
+
+      setTodoItems(newList);
+      setItem(itemInitialState);
+      setIsDuplicate(false);
+    }
   };
+  console.log("isDuplicate STATE --", isDuplicate);
 
   const onItemCompletion = (text) => {
     let newList = [];
@@ -62,14 +80,13 @@ export default function Home() {
 
     setTodoItems(newList);
 
-    console.log("NEW ITEMS LIST: ", newList);
+    // console.log("NEW ITEMS LIST: ", newList);
     // change item status
-
     // rehydrate list
   };
 
   const deleteTodo = (id) => {
-    console.log("TODO ITEMS => ", [...todoItems]);
+    // console.log("TODO ITEMS => ", [...todoItems]);
     const newList = [...todoItems];
     setTodoItems(newList.filter((item) => item.id !== id));
   };
@@ -143,6 +160,15 @@ export default function Home() {
         </div>
       </header>
       <div className="main">
+        {isDuplicate && (
+          <div className="isDuplicate">
+            <div>
+              <img src={DuplicateIcon} alt="DuplicateIcon" />
+              Duplicate entry
+              <span>Please try a unique todo</span>
+            </div>
+          </div>
+        )}
         <div className="form-input-todo-item">
           <TodoItem
             isHeader={true}
