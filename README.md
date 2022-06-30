@@ -3,9 +3,15 @@
 After I found some free time, I reviewed the application and started in order to improve the its features, fix some bugs, and enhance some features.
 
 - Todo items deleted all new entries
+
   - _Issue:_ After the insertion of the seeds data file, that is loaded in the application initial load, all news todos were being deleted at once.
   - I realized that the IDs for the new entries were not being generated.
   - After generating the new ID based on the previous item ID I have configured the delete function to target the correct `item.id`.
+
+- Prevent Duplicate todos
+  - _Issue:_ There is no duplicate items logic, therefore, a single item name could be added causing duplication.
+  - I created a simple function that runs inside of onSubmit where it checks the todoItems list for an recurring instance of the todo item.
+  - Then, I created a conditional to check is the duplication is true display a isDuplicate msg, clear the input value and allows the user to re-enter a value.
 
 ---
 

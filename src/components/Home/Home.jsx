@@ -54,7 +54,6 @@ export default function Home() {
       handleIsDuplicate();
       item.value = "";
     } else {
-      //check item.value
       if (item.value) {
         setItem({ id: item.id, value: item.value, status: "active" });
       }
