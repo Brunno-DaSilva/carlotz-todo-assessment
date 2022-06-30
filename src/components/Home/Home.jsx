@@ -174,7 +174,7 @@ export default function Home() {
           </div>
         </div>
       </header>
-      <div className="main">
+      <div className={isDuplicate ? "main marginBottom" : "main "}>
         <div className="form-input-todo-item">
           <TodoItem
             isHeader={true}

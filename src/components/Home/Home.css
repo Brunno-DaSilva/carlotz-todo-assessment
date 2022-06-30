@@ -64,6 +64,9 @@ body {
   margin: auto;
   display: flex;
   flex-direction: column;
+  z-index: 999;
+  position: fixed;
+  top: 22%;
 }
 
 .header-hero-img {
@@ -71,12 +74,14 @@ body {
 }
 
 .main-header {
+  position: absolute;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   top: 0;
-  border: 1px solid red;
+  width: 100%;
+  height: 25vh;
 }
 
 .isDuplicate {
@@ -85,7 +90,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  height: 15.6rem;
+  height: 100%;
   background-color: hsla(0, 93%, 5%, 0.341);
   backdrop-filter: blur(5px);
   transition: all ease-in-out 0.5s;
@@ -94,6 +99,9 @@ body {
   align-items: flex-start;
 }
 
+.marginBottom {
+  margin-bottom: 2rem;
+}
 .isDuplicate div {
   padding: 0.25rem;
   width: 100%;
@@ -171,8 +179,7 @@ body {
 }
 
 /*Lits Item Container*/
-.todo-items-list-container {
-}
+
 .form-input-todo-item {
   margin-top: -4rem;
   margin-bottom: 1rem;
