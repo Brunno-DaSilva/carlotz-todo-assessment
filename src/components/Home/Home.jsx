@@ -21,16 +21,23 @@ export default function Home() {
   const [todoItems, setTodoItems] = useState(SEED_DATA);
   const [item, setItem] = useState(itemInitialState);
   const [isDuplicate, setIsDuplicate] = useState(false);
-
-  let lastID = todoItems[todoItems.length - 1].id;
+  const [lastID, setLastID] = useState(100);
   const [generateID, setGenerateID] = useState(lastID);
 
   const lightThemeHandler = () => {
     setIsLightTheme((prevMode) => !prevMode);
   };
 
+  function handleEmptyTodoList() {
+    if (todoItems.length < 1) {
+      setLastID(0);
+    } else {
+      setLastID(todoItems[todoItems.length - 1].id);
+    }
+  }
   const onItemChange = (event) => {
-    setGenerateID(lastID + 1);
+    handleEmptyTodoList();
+    setGenerateID(generateID + 1);
     let newItem = {
       id: generateID,
       value: event.target.value,
@@ -132,6 +139,15 @@ export default function Home() {
         )}
       </div>
       <header className="main-header">
+        {isDuplicate && (
+          <div className="isDuplicate">
+            <div>
+              <img src={DuplicateIcon} alt="DuplicateIcon" />
+              Duplicate entry
+              <span>Please try a unique todo</span>
+            </div>
+          </div>
+        )}
         <div className="header-nav-bar">
           <div className="header-logo">
             <h1>TODO</h1>
@@ -159,15 +175,6 @@ export default function Home() {
         </div>
       </header>
       <div className="main">
-        {isDuplicate && (
-          <div className="isDuplicate">
-            <div>
-              <img src={DuplicateIcon} alt="DuplicateIcon" />
-              Duplicate entry
-              <span>Please try a unique todo</span>
-            </div>
-          </div>
-        )}
         <div className="form-input-todo-item">
           <TodoItem
             isHeader={true}
@@ -178,6 +185,7 @@ export default function Home() {
             generateID={generateID}
           />
         </div>
+
         <div className="todo-items-list-container">
           <TodoItemList
             items={todoItems}
@@ -187,6 +195,7 @@ export default function Home() {
             generateID={generateID}
           />
         </div>
+
         <Footer />
       </div>
     </div>

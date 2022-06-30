@@ -1,4 +1,5 @@
 import React, { useState, ReactFragment } from "react";
+
 import TodoItem from "../TodoItem/TodoItem";
 import "./TodoItemList.css";
 
@@ -92,6 +93,7 @@ export default function TodoItemList({
             <p>Error: No data found</p>
           )}
         </div>
+
         <div className="item-list-footer">
           <div className="hide-on-mobile">
             <span>{itemsCounter} items left</span>
