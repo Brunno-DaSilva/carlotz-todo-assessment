@@ -75,8 +75,7 @@ export default function Home() {
   console.log("isDuplicate STATE --", isDuplicate);
 
   const onItemCompletion = (text) => {
-    let newList = [];
-    todoItems.map((item) => {
+    let newList = todoItems.map((item) => {
       if (item.value === text) {
         newList.push({ id: item.id, value: item.value, status: "completed" });
       } else {
