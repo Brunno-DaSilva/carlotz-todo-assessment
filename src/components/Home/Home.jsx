@@ -44,7 +44,6 @@ export default function Home() {
       status: "active",
     };
     setItem(newItem);
-    // console.log(`onItemChange--Item - ${JSON.stringify(newItem)}`);
   };
 
   const handleIsDuplicate = () => {
@@ -84,10 +83,6 @@ export default function Home() {
     });
 
     setTodoItems(newList);
-
-    // console.log("NEW ITEMS LIST: ", newList);
-    // change item status
-    // rehydrate list
   };
 
   const deleteTodo = (id) => {

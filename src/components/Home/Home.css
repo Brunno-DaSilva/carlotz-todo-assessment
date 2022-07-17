@@ -23,11 +23,6 @@
   --lt-dark-grayish-blue2: hsl(235, 19%, 35%);
 }
 
-body {
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
 .dark-mode {
   --background-color: var(--dt-dark-blue);
   --text-color: var(--dt-dark-grayish-blue);
@@ -43,6 +38,11 @@ body {
   --item-background-color: var(--lt-light-blue);
   --border-color: var(--lt-light-grayish-blue2);
 }
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
 .button {
   background: linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
